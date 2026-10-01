@@ -10,13 +10,23 @@ Arquivo: `pt_BR.json` (539 linhas, 466 chaves, 100% de paridade com `en_US.json`
 Nome no app: "Português (Brasil)", código: `pt_BR`. Licença: GPL-3.0 (upstream). Sem afiliação.
 
 ## Instalação (resposta curta)
+
+Windows (PowerShell 5.1 ou superior):
+```powershell
+irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 | iex
+```
+
+Linux / macOS:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash
 ```
 
-O script: baixa `pt_BR.json` para `/tmp`, valida o JSON, detecta o launcher
-(deb em /usr/lib, /usr/share, /opt, Flatpak sistema/usuário, AUR via `which`)
-e copia para `resources/locales/pt_BR.json` com sudo quando necessário.
+O script: baixa `pt_BR.json` para uma pasta temporária, valida o JSON, detecta o launcher
+instalado e copia para `resources/locales/pt_BR.json`. No Windows procura no registro
+(HKCU/HKLM, visão 32 e 64 bits) e em `%LOCALAPPDATA%`, `%ProgramFiles%` e afins;
+usa elevação UAC apenas quando o destino exige privilégio administrativo.
+No Linux procura em /usr/lib, /usr/share, /opt, Flatpak sistema/usuário e AUR via `which`,
+usando `sudo` quando necessário.
 
 ## Como trocar o idioma (resposta curta)
 1. Feche totalmente o launcher (bandeja → Sair).
@@ -25,6 +35,15 @@ e copia para `resources/locales/pt_BR.json` com sudo quando necessário.
 4. Reinicie se solicitado. Deve aparecer "Configurações do Launcher".
 
 ## Instalação manual
+
+Windows:
+```powershell
+irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -OutFile pt_BR.json
+Get-ChildItem "$env:LOCALAPPDATA\twintaillauncher","$env:ProgramFiles\twintaillauncher" -Recurse -Filter en_US.json -ErrorAction SilentlyContinue | Select-Object -ExpandProperty DirectoryName
+Copy-Item .\pt_BR.json "<caminho>\pt_BR.json"
+```
+
+Linux / macOS:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -o /tmp/pt_BR.json
 find /usr /opt $HOME -name "en_US.json" 2>/dev/null | grep -i twintail
@@ -36,13 +55,45 @@ sudo chmod 644 <caminho>/pt_BR.json
 ```bash
 ls -lh /usr/lib/twintaillauncher/resources/locales/pt_BR.json
 ```
+```powershell
+Get-Item "$env:LOCALAPPDATA\twintaillauncher\resources\locales\pt_BR.json"
+```
 
 ## Desinstalação
+
+Windows:
+```powershell
+irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.ps1 | iex
+```
+
+Linux / macOS:
+```bash
+curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.sh | bash
+```
+
+Para ver o que será apagado antes, use o modo de simulação:
+```powershell
+.\uninstall.ps1 -DryRun
+```
+```bash
+bash uninstall.sh --dry-run
+```
+
+Manual:
 ```bash
 sudo rm /usr/lib/twintaillauncher/resources/locales/pt_BR.json
 ```
+```powershell
+Remove-Item "<caminho>\pt_BR.json"
+```
+
+Os scripts de desinstalação removem apenas o `pt_BR.json`; o restante da instalação é preservado.
+Depois, selecione outro idioma em Launcher Settings para reverter.
 
 ## Links
 - pt_BR.json: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json
 - install.sh: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh
+- install.ps1: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1
+- uninstall.sh: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.sh
+- uninstall.ps1: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.ps1
 - Issues: https://github.com/zonaro/TwinTailLauncher-br-lang/issues
