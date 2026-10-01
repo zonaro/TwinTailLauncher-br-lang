@@ -2,7 +2,7 @@
 
 Brazilian Portuguese (`pt_BR`) translation for [TwintailLauncher](https://github.com/TwintailTeam/TwintailLauncher) — a multi-platform launcher for anime games.
 
-> **pt_BR** baseado em `en_US.json` (stable) com 466 chaves, 100% de paridade. Testado em Linux (Wayland/KDE) com `target/debug/resources/locales/pt_BR.json` e `storage.db` `app_lang = pt_BR`.
+> **pt_BR** baseado em `en_US.json` (stable, ttl-v2.5.1) com 466 chaves, 100% de paridade. Formato nested igual ao upstream. Testado em Linux (Wayland/KDE) com `target/debug/resources/locales/pt_BR.json` e `storage.db` `app_lang = pt_BR`.
 
 ---
 
@@ -103,7 +103,7 @@ Select another language in Launcher Settings to revert.
 ## 📦 Contents
 
 ```
-/pt_BR.json   # 539 lines, 466 keys, based on en_US.json (stable)
+/pt_BR.json   # 626 lines, 466 keys, based on en_US.json (stable, ttl-v2.5.1)
 /install.sh   # auto-installer via curl + find + sudo cp
 /README.md    # this file
 ```
