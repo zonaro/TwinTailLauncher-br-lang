@@ -1,0 +1,48 @@
+# Twintail Launcher — Pacote de Idioma pt-BR (para IAs e humanos)
+
+> Fonte oficial desta página: https://zonaro.github.io/TwinTailLauncher-br-lang/
+> Repositório: https://github.com/zonaro/TwinTailLauncher-br-lang
+> Projeto original: https://twintaillauncher.app/ e https://github.com/TwintailTeam/TwintailLauncher
+
+## O que é
+Tradução comunitária do Twintail Launcher para português do Brasil.
+Arquivo: `pt_BR.json` (539 linhas, 466 chaves, 100% de paridade com `en_US.json`).
+Nome no app: "Português (Brasil)", código: `pt_BR`. Licença: GPL-3.0 (upstream). Sem afiliação.
+
+## Instalação (resposta curta)
+```bash
+curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash
+```
+
+O script: baixa `pt_BR.json` para `/tmp`, valida o JSON, detecta o launcher
+(deb em /usr/lib, /usr/share, /opt, Flatpak sistema/usuário, AUR via `which`)
+e copia para `resources/locales/pt_BR.json` com sudo quando necessário.
+
+## Como trocar o idioma (resposta curta)
+1. Feche totalmente o launcher (bandeja → Sair).
+2. Reabra.
+3. Launcher Settings → General → Application language → "Português (Brasil)".
+4. Reinicie se solicitado. Deve aparecer "Configurações do Launcher".
+
+## Instalação manual
+```bash
+curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -o /tmp/pt_BR.json
+find /usr /opt $HOME -name "en_US.json" 2>/dev/null | grep -i twintail
+sudo cp /tmp/pt_BR.json <caminho>/pt_BR.json
+sudo chmod 644 <caminho>/pt_BR.json
+```
+
+## Verificação
+```bash
+ls -lh /usr/lib/twintaillauncher/resources/locales/pt_BR.json
+```
+
+## Desinstalação
+```bash
+sudo rm /usr/lib/twintaillauncher/resources/locales/pt_BR.json
+```
+
+## Links
+- pt_BR.json: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json
+- install.sh: https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh
+- Issues: https://github.com/zonaro/TwinTailLauncher-br-lang/issues

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twintail Launcher em Português (Brasil) — Pacote de Idioma pt-BR</title>
+  <meta name="description" content="Traduza o Twintail Launcher para português do Brasil com 1 comando. Pacote pt-BR comunitário com 466 chaves, 100% de paridade com o inglês. Veja como instalar e trocar o idioma." />
+  <meta name="keywords" content="twintail launcher, twintaillauncher, português brasil, pt-BR, tradução, genshin impact, honkai star rail, zenless zone zero, launcher linux, launcher windows" />
+  <meta name="author" content="zonaro — contribuição comunitária" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://zonaro.github.io/TwinTailLauncher-br-lang/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Twintail Launcher em Português (Brasil) — instale com 1 comando" />
+  <meta property="og:description" content="Pacote de idioma pt-BR comunitário para o Twintail Launcher. Instalação com um comando + como trocar o idioma em 3 passos." />
+  <meta property="og:url" content="https://zonaro.github.io/TwinTailLauncher-br-lang/" />
+  <meta property="og:site_name" content="Twintail Launcher pt-BR" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_card" />
+  <meta name="twitter:title" content="Twintail Launcher em Português (Brasil)" />
+  <meta name="twitter:description" content="Traduza o Twintail Launcher com 1 comando: curl -fsSL …/install.sh | bash" />
+
+  <meta name="theme-color" content="#14101f" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%87%A7%F0%9F%87%B7%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Dados estruturados: SEO + IA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Twintail Launcher — Pacote de Idioma Português (Brasil)",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, Linux",
+    "inLanguage": "pt-BR",
+    "description": "Tradução comunitária do Twintail Launcher para português do Brasil (pt_BR.json, 466 chaves, 100% de paridade com en_US). Instalação com um comando.",
+    "url": "https://zonaro.github.io/TwinTailLauncher-br-lang/",
+    "downloadUrl": "https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json",
+    "author": { "@type": "Person", "name": "zonaro", "url": "https://github.com/zonaro" },
+    "isBasedOn": "https://github.com/TwintailTeam/TwintailLauncher",
+    "license": "https://github.com/TwintailTeam/TwintailLauncher/blob/stable/LICENSE",
+    "softwareVersion": "1.0",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Como instalar o Twintail Launcher em português?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Abra o terminal e rode: curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash. O script baixa o pt_BR.json, detecta a instalação e copia para resources/locales." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como trocar o idioma do Twintail Launcher para português?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Reinicie o launcher, abra Launcher Settings > General > Application language, selecione Português (Brasil) e reinicie se solicitado." }
+      },
+      {
+        "@type": "Question",
+        "name": "Funciona no Flatpak?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim. O instalador detecta instalações Flatpak em /var/lib/flatpak e ~/.local/share/flatpak automaticamente." }
+      },
+      {
+        "@type": "Question",
+        "name": "É oficial?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Não. É uma contribuição comunitária sem afiliação com o TwintailTeam, sob a mesma licença GPL-3.0 do projeto original." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#instalar">Pular para a instalação</a>
+
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegação principal">
+      <a class="brand" href="#topo" aria-label="Início — Twintail Launcher pt-BR">🇧🇷 <strong>Twintail Launcher <span>pt-BR</span></strong></a>
+      <div class="links">
+        <a href="#instalar">Instalar</a>
+        <a href="#trocar-idioma">Trocar idioma</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn-ghost" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <!-- HERO -->
+    <section class="hero wrap" aria-labelledby="titulo">
+      <p class="badge">💜 Pacote comunitário · 466 chaves · 100% de paridade com o inglês</p>
+      <h1 id="titulo">Twintail Launcher em <em>português do Brasil</em></h1>
+      <p class="lead">Seus jogos de anime, um launcher — <strong>agora no seu idioma</strong>. Tradução completa do <a href="https://twintaillauncher.app/" target="_blank" rel="noopener">Twintail Launcher</a> (Genshin, Star Rail, ZZZ, WuWa e mais) para Windows e Linux. Instalação com <strong>um comando</strong>.</p>
+
+      <div class="install-box" id="instalar" aria-label="Comando de instalação">
+        <div class="install-head">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="term-title">terminal — copie e cole</span>
+        </div>
+        <pre><code id="oneliner">curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+        <div class="install-actions">
+          <button id="copyBtn" type="button">📋 Copiar comando</button>
+          <a class="btn-primary" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">⭐ Ver no GitHub</a>
+        </div>
+        <p class="hint" id="copyHint" role="status" aria-live="polite"></p>
+      </div>
+
+      <ol class="steps-mini" aria-label="Resumo em 3 passos">
+        <li><strong>1.</strong> Rode o comando acima</li>
+        <li><strong>2.</strong> Reinicie o launcher</li>
+        <li><strong>3.</strong> Troque o idioma para <em>Português (Brasil)</em></li>
+      </ol>
+
+      <dl class="trust" aria-label="Destaques do pacote">
+        <div><dt>466</dt><dd>chaves traduzidas</dd></div>
+        <div><dt>1</dt><dd>comando para instalar</dd></div>
+        <div><dt>deb · Flatpak · AUR</dt><dd>detecção automática</dd></div>
+        <div><dt>Grátis</dt><dd>GPL-3.0, sempre</dd></div>
+      </dl>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="wrap section" aria-labelledby="o-que-e">
+      <h2 id="o-que-e">O que é este pacote?</h2>
+      <div class="grid2">
+        <div>
+          <p>O <strong>Twintail Launcher</strong> é um launcher gratuito e de código aberto (Tauri + Rust + TypeScript) para gerenciar jogos de anime no PC — download, atualização, mods via XXMI, desbloqueio de FPS e mais. O site oficial é <a href="https://twintaillauncher.app/" target="_blank" rel="noopener">twintaillauncher.app</a>.</p>
+          <p>Este repositório é a <strong>tradução comunitária para português do Brasil</strong>: o arquivo <code>pt_BR.json</code> baseado no <code>en_US.json</code> (branch stable), com termos técnicos preservados (Runner, Prefix, MangoHUD, Gamemode, XXMI…) e placeholders intactos (<code>{install_name}</code>, <code>{speed}</code>…).</p>
+        </div>
+        <aside class="card" aria-label="Ficha rápida">
+          <h3>Ficha rápida</h3>
+          <ul>
+            <li><strong>Arquivo:</strong> <code>pt_BR.json</code> (539 linhas)</li>
+            <li><strong>Nome no app:</strong> <em>Português (Brasil)</em></li>
+            <li><strong>Código:</strong> <code>pt_BR</code></li>
+            <li><strong>Instalador:</strong> <code>install.sh</code> (curl/wget + sudo automático)</li>
+            <li><strong>Licença:</strong> mesma do upstream (GPL-3.0)</li>
+            <li><strong>Afiliação:</strong> nenhuma — projeto da comunidade 💜</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- INSTALAÇÃO -->
+    <section class="wrap section" aria-labelledby="como-instalar">
+      <h2 id="como-instalar">Como instalar (1 minuto)</h2>
+      <h3>Opção 1 — automática <span class="tag">recomendada</span></h3>
+      <p>Rode no terminal. O script baixa o <code>pt_BR.json</code>, valida o JSON, localiza o Twintail Launcher (deb, Flatpak sistema/usuário, AUR, binário) e copia o arquivo para <code>resources/locales</code> — usando <code>sudo</code> só quando precisa.</p>
+      <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+      <details>
+        <summary>Alternativas (wget / process substitution)</summary>
+        <pre><code>wget -qO- https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash
+
+# ou
+bash &lt;(curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh)</code></pre>
+      </details>
+
+      <h3>Opção 2 — manual</h3>
+      <ol class="steps">
+        <li>Baixe o arquivo:
+          <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -o /tmp/pt_BR.json</code></pre>
+        </li>
+        <li>Encontre a pasta de locales:
+          <pre><code>find /usr /opt $HOME -name "en_US.json" 2&gt;/dev/null | grep -i twintail</code></pre>
+        </li>
+        <li>Copie (troque <code>&lt;caminho&gt;</code> pelo resultado):
+          <pre><code>sudo cp /tmp/pt_BR.json &lt;caminho&gt;/pt_BR.json
+sudo chmod 644 &lt;caminho&gt;/pt_BR.json</code></pre>
+        </li>
+        <li>Reinicie o launcher e siga o <a href="#trocar-idioma">passo de trocar o idioma</a>.</li>
+      </ol>
+    </section>
+
+    <!-- TROCAR IDIOMA -->
+    <section class="wrap section highlight" id="trocar-idioma" aria-labelledby="titulo-trocar">
+      <h2 id="titulo-trocar">🔄 Como trocar o idioma para português</h2>
+      <ol class="steps big">
+        <li><strong>Feche totalmente o launcher</strong> (bandeja do sistema → <em>Sair/Quit</em>).</li>
+        <li><strong>Reabra</strong> o Twintail Launcher.</li>
+        <li>Abra <strong>Launcher Settings → General → Application language</strong>.</li>
+        <li>Selecione <strong>“Português (Brasil)”</strong>.</li>
+        <li><strong>Reinicie</strong> se o app pedir. Pronto: você verá <em>“Configurações do Launcher”</em>. ✨</li>
+      </ol>
+      <details>
+        <summary>Não apareceu “Português (Brasil)” na lista?</summary>
+        <div>
+          <p>Verifique se o arquivo foi copiado para o lugar certo:</p>
+          <pre><code>ls -lh /usr/lib/twintaillauncher/resources/locales/pt_BR.json
+ls -lh /var/lib/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/twintaillauncher/resources/locales/pt_BR.json
+find /usr /opt /var/lib/flatpak $HOME/.local/share/flatpak -name "pt_BR.json" -path "*twintail*resources/locales*" 2&gt;/dev/null</code></pre>
+          <p>Se o <code>find</code> não retornar nada, rode o instalador de novo e confira a mensagem de erro — geralmente é caminho do Flatpak usuário vs. sistema.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- JOGOS -->
+    <section class="wrap section" id="jogos" aria-labelledby="titulo-jogos">
+      <h2 id="titulo-jogos">Jogos suportados pelo launcher</h2>
+      <p>Herdeiros do site oficial (<a href="https://twintaillauncher.app/#games" target="_blank" rel="noopener">twintaillauncher.app</a>): títulos atuais da HoYoverse e Kuro Games, e mais.</p>
+      <ul class="games">
+        <li><strong>Genshin Impact</strong> <span>HoYoverse</span></li>
+        <li><strong>Honkai: Star Rail</strong> <span>HoYoverse</span></li>
+        <li><strong>Honkai Impact 3rd</strong> <span>HoYoverse</span></li>
+        <li><strong>Zenless Zone Zero</strong> <span>HoYoverse</span></li>
+        <li><strong>Wuthering Waves</strong> <span>Kuro Games</span></li>
+        <li><strong>Punishing: Gray Raven</strong> <span>Kuro Games</span></li>
+        <li><strong>Aether Gazer</strong> <span>Xiamen Yongshi</span></li>
+        <li><strong>Arknights / Endfield</strong> <span>Hypergryph</span></li>
+        <li><strong>Stella Sora</strong> <span>Yostar</span></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="wrap section" id="faq" aria-labelledby="titulo-faq">
+      <h2 id="titulo-faq">Perguntas frequentes</h2>
+      <details open>
+        <summary>Preciso reinstalar a cada atualização do launcher?</summary>
+        <p>Na maioria das vezes, não — o arquivo fica na pasta de locales. Mas atualizações via Flatpak/AUR podem sobrescrever a pasta. Se o português sumir após atualizar, <strong>rode o comando de instalação de novo</strong>.</p>
+      </details>
+      <details>
+        <summary>Funciona no Windows?</summary>
+        <p>O <code>install.sh</code> é para Linux. No Windows, baixe o <a href="https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json" target="_blank" rel="noopener">pt_BR.json</a> e copie para a pasta <code>resources/locales</code> ao lado do executável (onde está o <code>en_US.json</code>).</p>
+      </details>
+      <details>
+        <summary>É seguro? Vou ser banido?</summary>
+        <p>O pacote só adiciona um arquivo de tradução — não modifica o jogo nem o comportamento do launcher. Sobre bans e Proton no Linux, valem as mesmas ressalvas do <a href="https://twintaillauncher.app/#faq" target="_blank" rel="noopener">FAQ oficial</a>: decisões são das desenvolvedoras dos jogos.</p>
+      </details>
+      <details>
+        <summary>Como desinstalar?</summary>
+        <pre><code>sudo rm /usr/lib/twintaillauncher/resources/locales/pt_BR.json
+# Flatpak usuário:
+rm ~/.local/share/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/twintaillauncher/resources/locales/pt_BR.json</code></pre>
+        <p>Depois selecione outro idioma nas configurações.</p>
+      </details>
+      <details>
+        <summary>Encontrei um erro de tradução. Como ajudar?</summary>
+        <p>Abra uma <a href="https://github.com/zonaro/TwinTailLauncher-br-lang/issues" target="_blank" rel="noopener">issue</a> ou mande um PR com a correção no <code>pt_BR.json</code>. Toda ajuda é bem-vinda! 💜</p>
+      </details>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="wrap section cta" aria-labelledby="titulo-cta">
+      <h2 id="titulo-cta">Pronto para jogar em português? 🎮</h2>
+      <p>Um comando, três cliques, zero telemetria. Feito com 💜 pela comunidade.</p>
+      <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+      <p>
+        <a class="btn-primary" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">⭐ Apoie no GitHub</a>
+        <a class="btn-ghost" href="https://twintaillauncher.app/#download" target="_blank" rel="noopener">Baixar o launcher oficial</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>Twintail Launcher pt-BR</strong> — tradução comunitária 🇧🇷 · Sem afiliação com o <a href="https://github.com/TwintailTeam/TwintailLauncher" target="_blank" rel="noopener">TwintailTeam</a> · Licença conforme o projeto original (GPL-3.0).</p>
+      <p class="small">
+        <a href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">Repositório</a> ·
+        <a href="https://github.com/zonaro/TwinTailLauncher-br-lang/issues" target="_blank" rel="noopener">Reportar erro de tradução</a> ·
+        <a href="https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json" target="_blank" rel="noopener">pt_BR.json</a> ·
+        <a href="https://twintaillauncher.app/" target="_blank" rel="noopener">Site oficial</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const text = document.getElementById('oneliner').innerText.trim();
+      const hint = document.getElementById('copyHint');
+      try {
+        await navigator.clipboard.writeText(text);
+        hint.textContent = '✅ Comando copiado! Cole no terminal e pressione Enter.';
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta);
+        ta.select(); document.execCommand('copy'); ta.remove();
+        hint.textContent = '✅ Comando copiado!';
+      }
+    });
+  </script>
+</body>
+</html>
