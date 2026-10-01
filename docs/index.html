@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-platform="linux">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Twintail Launcher em Português (Brasil) — Pacote de Idioma pt-BR</title>
-  <meta name="description" content="Traduza o Twintail Launcher para português do Brasil com 1 comando. Pacote pt-BR comunitário com 466 chaves, 100% de paridade com o inglês. Veja como instalar e trocar o idioma." />
-  <meta name="keywords" content="twintail launcher, twintaillauncher, português brasil, pt-BR, tradução, genshin impact, honkai star rail, zenless zone zero, launcher linux, launcher windows" />
+  <meta name="description" content="Traduza o Twintail Launcher para português do Brasil com 1 comando no Windows ou Linux. Pacote pt-BR comunitário com 466 chaves, 100% de paridade com o inglês. Instaladores e desinstaladores para as duas plataformas." />
+  <meta name="keywords" content="twintail launcher, twintaillauncher, português brasil, pt-BR, tradução, genshin impact, honkai star rail, zenless zone zero, launcher linux, launcher windows, powershell" />
   <meta name="author" content="zonaro — contribuição comunitária" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://zonaro.github.io/TwinTailLauncher-br-lang/" />
@@ -14,14 +14,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:title" content="Twintail Launcher em Português (Brasil) — instale com 1 comando" />
-  <meta property="og:description" content="Pacote de idioma pt-BR comunitário para o Twintail Launcher. Instalação com um comando + como trocar o idioma em 3 passos." />
+  <meta property="og:description" content="Pacote de idioma pt-BR comunitário para o Twintail Launcher. Instalação com um comando no Windows (PowerShell) e no Linux (curl | bash)." />
   <meta property="og:url" content="https://zonaro.github.io/TwinTailLauncher-br-lang/" />
   <meta property="og:site_name" content="Twintail Launcher pt-BR" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_card" />
   <meta name="twitter:title" content="Twintail Launcher em Português (Brasil)" />
-  <meta name="twitter:description" content="Traduza o Twintail Launcher com 1 comando: curl -fsSL …/install.sh | bash" />
+  <meta name="twitter:description" content="Traduza o Twintail Launcher com 1 comando: curl … | bash no Linux, irm … | iex no PowerShell." />
 
   <meta name="theme-color" content="#14101f" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%87%A7%F0%9F%87%B7%3C/text%3E%3C/svg%3E" />
@@ -37,9 +37,10 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Windows, Linux",
     "inLanguage": "pt-BR",
-    "description": "Tradução comunitária do Twintail Launcher para português do Brasil (pt_BR.json, 466 chaves, 100% de paridade com en_US). Instalação com um comando.",
+    "description": "Tradução comunitária do Twintail Launcher para português do Brasil (pt_BR.json, 466 chaves, 100% de paridade com en_US). Instalação com um comando em Windows e Linux.",
     "url": "https://zonaro.github.io/TwinTailLauncher-br-lang/",
     "downloadUrl": "https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json",
+    "installUrl": "https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh",
     "author": { "@type": "Person", "name": "zonaro", "url": "https://github.com/zonaro" },
     "isBasedOn": "https://github.com/TwintailTeam/TwintailLauncher",
     "license": "https://github.com/TwintailTeam/TwintailLauncher/blob/stable/LICENSE",
@@ -54,8 +55,18 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Como instalar o Twintail Launcher em português?",
+        "name": "Como instalar o Twintail Launcher em português no Linux?",
         "acceptedAnswer": { "@type": "Answer", "text": "Abra o terminal e rode: curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash. O script baixa o pt_BR.json, detecta a instalação e copia para resources/locales." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como instalar o Twintail Launcher em português no Windows?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Abra o PowerShell e rode: irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 | iex. O script baixa o pt_BR.json, detecta a instalação em %LOCALAPPDATA%\\twintaillauncher ou no registro do Windows e copia para resources\\locales, pedindo elevação de administrador apenas quando necessário." }
+      },
+      {
+        "@type": "Question",
+        "name": "Como desinstalar o pacote de idioma?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No Linux: curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.sh | bash. No Windows: irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.ps1 | iex. Ambos removem apenas o arquivo pt_BR.json das pastas de locales detectadas." }
       },
       {
         "@type": "Question",
@@ -85,6 +96,7 @@
       <div class="links">
         <a href="#instalar">Instalar</a>
         <a href="#trocar-idioma">Trocar idioma</a>
+        <a href="#desinstalar">Desinstalar</a>
         <a href="#jogos">Jogos</a>
         <a href="#faq">Dúvidas</a>
         <a class="btn-ghost" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">GitHub ↗</a>
@@ -102,9 +114,28 @@
       <div class="install-box" id="instalar" aria-label="Comando de instalação">
         <div class="install-head">
           <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-          <span class="term-title">terminal — copie e cole</span>
+          <span class="term-title" data-platform-panel="linux">terminal — copie e cole</span>
+          <span class="term-title" data-platform-panel="windows">powershell — copie e cole</span>
+          <span class="detected" id="detectedBadge" hidden>detectado</span>
         </div>
-        <pre><code id="oneliner">curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+
+        <div class="platform-switch">
+          <fieldset>
+            <legend class="sr-only">Escolha a plataforma</legend>
+            <span class="seg-opt">
+              <input type="radio" name="platform" id="pf-windows" value="windows" />
+              <label for="pf-windows">🪟 Windows</label>
+            </span>
+            <span class="seg-opt">
+              <input type="radio" name="platform" id="pf-linux" value="linux" checked />
+              <label for="pf-linux">🐧 Linux</label>
+            </span>
+          </fieldset>
+        </div>
+
+        <pre data-platform-panel="linux"><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+        <pre data-platform-panel="windows"><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 | iex</code></pre>
+
         <div class="install-actions">
           <button id="copyBtn" type="button">📋 Copiar comando</button>
           <a class="btn-primary" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">⭐ Ver no GitHub</a>
@@ -121,7 +152,7 @@
       <dl class="trust" aria-label="Destaques do pacote">
         <div><dt>466</dt><dd>chaves traduzidas</dd></div>
         <div><dt>1</dt><dd>comando para instalar</dd></div>
-        <div><dt>deb · Flatpak · AUR</dt><dd>detecção automática</dd></div>
+        <div><dt>Windows · Linux</dt><dd>instaladores próprios</dd></div>
         <div><dt>Grátis</dt><dd>GPL-3.0, sempre</dd></div>
       </dl>
     </section>
@@ -137,10 +168,11 @@
         <aside class="card" aria-label="Ficha rápida">
           <h3>Ficha rápida</h3>
           <ul>
-            <li><strong>Arquivo:</strong> <code>pt_BR.json</code> (539 linhas)</li>
+            <li><strong>Arquivo:</strong> <code>pt_BR.json</code></li>
             <li><strong>Nome no app:</strong> <em>Português (Brasil)</em></li>
             <li><strong>Código:</strong> <code>pt_BR</code></li>
-            <li><strong>Instalador:</strong> <code>install.sh</code> (curl/wget + sudo automático)</li>
+            <li><strong>Instaladores:</strong> <code>install.sh</code> e <code>install.ps1</code></li>
+            <li><strong>Desinstaladores:</strong> <code>uninstall.sh</code> e <code>uninstall.ps1</code></li>
             <li><strong>Licença:</strong> mesma do upstream (GPL-3.0)</li>
             <li><strong>Afiliação:</strong> nenhuma — projeto da comunidade 💜</li>
           </ul>
@@ -151,19 +183,37 @@
     <!-- INSTALAÇÃO -->
     <section class="wrap section" aria-labelledby="como-instalar">
       <h2 id="como-instalar">Como instalar (1 minuto)</h2>
+
       <h3>Opção 1 — automática <span class="tag">recomendada</span></h3>
-      <p>Rode no terminal. O script baixa o <code>pt_BR.json</code>, valida o JSON, localiza o Twintail Launcher (deb, Flatpak sistema/usuário, AUR, binário) e copia o arquivo para <code>resources/locales</code> — usando <code>sudo</code> só quando precisa.</p>
-      <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
-      <details>
-        <summary>Alternativas (wget / process substitution)</summary>
+
+      <p data-platform-panel="linux">Rode no terminal. O script baixa o <code>pt_BR.json</code>, valida o JSON, localiza o Twintail Launcher (deb, Flatpak sistema/usuário, AUR, binário) e copia o arquivo para <code>resources/locales</code> — usando <code>sudo</code> só quando precisa.</p>
+      <pre data-platform-panel="linux"><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+
+      <p data-platform-panel="windows">Rode no PowerShell. O script baixa o <code>pt_BR.json</code>, valida o JSON, localiza o Twintail Launcher (registro do Windows, <code>%LOCALAPPDATA%</code>, <code>Program Files</code>) e copia o arquivo para <code>resources\locales</code>. Só pede elevação de administrador (UAC) quando a pasta exigir.</p>
+      <pre data-platform-panel="windows"><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 | iex</code></pre>
+
+      <details data-platform-panel="linux">
+        <summary>Alternativas no Linux (wget / process substitution)</summary>
         <pre><code>wget -qO- https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash
 
 # ou
 bash &lt;(curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh)</code></pre>
       </details>
 
+      <details data-platform-panel="windows">
+        <summary>Alternativas no Windows (baixar o arquivo / Xbox Game Bar)</summary>
+        <pre><code># Baixar o script e rodar do arquivo (permite -ExecutionPolicy e flags)
+irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 -OutFile install.ps1
+.\install.ps1
+
+# Se a execução de scripts estiver bloqueada, use o flag por processo:
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1</code></pre>
+        <p class="hint">O <code>irm … | iex</code> funciona mesmo com a política de execução restritiva, porque o <code>iex</code> não passa pelo bloqueio de arquivos.</p>
+      </details>
+
       <h3>Opção 2 — manual</h3>
-      <ol class="steps">
+
+      <ol class="steps" data-platform-panel="linux">
         <li>Baixe o arquivo:
           <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -o /tmp/pt_BR.json</code></pre>
         </li>
@@ -173,6 +223,19 @@ bash &lt;(curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-b
         <li>Copie (troque <code>&lt;caminho&gt;</code> pelo resultado):
           <pre><code>sudo cp /tmp/pt_BR.json &lt;caminho&gt;/pt_BR.json
 sudo chmod 644 &lt;caminho&gt;/pt_BR.json</code></pre>
+        </li>
+        <li>Reinicie o launcher e siga o <a href="#trocar-idioma">passo de trocar o idioma</a>.</li>
+      </ol>
+
+      <ol class="steps" data-platform-panel="windows">
+        <li>Baixe o arquivo:
+          <pre><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json -OutFile pt_BR.json</code></pre>
+        </li>
+        <li>Encontre a pasta de locales (onde está o <code>en_US.json</code>):
+          <pre><code>Get-ChildItem "$env:LOCALAPPDATA","$env:ProgramFiles" -Filter en_US.json -Recurse -Depth 4 -ErrorAction SilentlyContinue</code></pre>
+        </li>
+        <li>Copie (troque <code>&lt;caminho&gt;</code> pelo resultado):
+          <pre><code>Copy-Item .\pt_BR.json "&lt;caminho&gt;\pt_BR.json" -Force</code></pre>
         </li>
         <li>Reinicie o launcher e siga o <a href="#trocar-idioma">passo de trocar o idioma</a>.</li>
       </ol>
@@ -191,13 +254,58 @@ sudo chmod 644 &lt;caminho&gt;/pt_BR.json</code></pre>
       <details>
         <summary>Não apareceu “Português (Brasil)” na lista?</summary>
         <div>
-          <p>Verifique se o arquivo foi copiado para o lugar certo:</p>
-          <pre><code>ls -lh /usr/lib/twintaillauncher/resources/locales/pt_BR.json
+          <p data-platform-panel="linux">Verifique se o arquivo foi copiado para o lugar certo:</p>
+          <pre data-platform-panel="linux"><code>ls -lh /usr/lib/twintaillauncher/resources/locales/pt_BR.json
 ls -lh /var/lib/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/twintaillauncher/resources/locales/pt_BR.json
 find /usr /opt /var/lib/flatpak $HOME/.local/share/flatpak -name "pt_BR.json" -path "*twintail*resources/locales*" 2&gt;/dev/null</code></pre>
-          <p>Se o <code>find</code> não retornar nada, rode o instalador de novo e confira a mensagem de erro — geralmente é caminho do Flatpak usuário vs. sistema.</p>
+          <p data-platform-panel="linux">Se o <code>find</code> não retornar nada, rode o instalador de novo e confira a mensagem de erro — geralmente é caminho do Flatpak usuário vs. sistema.</p>
+
+          <p data-platform-panel="windows">Verifique se o arquivo foi copiado para o lugar certo:</p>
+          <pre data-platform-panel="windows"><code>Get-Item "$env:LOCALAPPDATA\twintaillauncher\resources\locales\pt_BR.json" | Format-List Name,Length
+Get-ChildItem "$env:LOCALAPPDATA" -Filter pt_BR.json -Recurse -Depth 4 -ErrorAction SilentlyContinue</code></pre>
+          <p data-platform-panel="windows">Rode o instalador de novo e confira a mensagem de erro — o script lista todas as pastas que tentou.</p>
         </div>
       </details>
+    </section>
+
+    <!-- DESINSTALAR -->
+    <section class="wrap section" id="desinstalar" aria-labelledby="titulo-desinstalar">
+      <h2 id="titulo-desinstalar">🗑️ Como desinstalar</h2>
+      <p>Os desinstaladores removem <strong>apenas</strong> o arquivo <code>pt_BR.json</code> das pastas de locales que detectarem. Nada mais do launcher é tocado.</p>
+
+      <h3>Automático <span class="tag">recomendado</span></h3>
+      <pre data-platform-panel="linux"><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.sh | bash</code></pre>
+      <pre data-platform-panel="windows"><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.ps1 | iex</code></pre>
+
+      <div class="note">
+        <strong>Quer ver o que será apagado antes?</strong> Baixe o script e use o modo de simulação — nada é removido.
+      </div>
+
+      <details data-platform-panel="linux">
+        <summary>Simulação (Linux)</summary>
+        <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.sh -o uninstall.sh
+bash uninstall.sh --dry-run</code></pre>
+      </details>
+
+      <details data-platform-panel="windows">
+        <summary>Simulação (Windows)</summary>
+        <pre><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/uninstall.ps1 -OutFile uninstall.ps1
+.\uninstall.ps1 -DryRun</code></pre>
+      </details>
+
+      <h3>Manual</h3>
+      <pre data-platform-panel="linux"><code># Encontrar
+find /usr /opt /var/lib/flatpak $HOME/.local/share/flatpak -name "pt_BR.json" -path "*resources/locales*" 2&gt;/dev/null
+
+# Remover
+sudo rm /usr/lib/twintaillauncher/resources/locales/pt_BR.json</code></pre>
+      <pre data-platform-panel="windows"><code># Encontrar
+Get-ChildItem "$env:LOCALAPPDATA","$env:ProgramFiles" -Filter pt_BR.json -Recurse -Depth 4 -ErrorAction SilentlyContinue
+
+# Remover (use o PowerShell como administrador se der erro de acesso)
+Remove-Item "$env:LOCALAPPDATA\twintaillauncher\resources\locales\pt_BR.json" -Force</code></pre>
+
+      <p class="hint">Depois de remover, feche e reabra o launcher e escolha outro idioma em <em>Launcher Settings → General → Application language</em>.</p>
     </section>
 
     <!-- JOGOS -->
@@ -222,11 +330,15 @@ find /usr /opt /var/lib/flatpak $HOME/.local/share/flatpak -name "pt_BR.json" -p
       <h2 id="titulo-faq">Perguntas frequentes</h2>
       <details open>
         <summary>Preciso reinstalar a cada atualização do launcher?</summary>
-        <p>Na maioria das vezes, não — o arquivo fica na pasta de locales. Mas atualizações via Flatpak/AUR podem sobrescrever a pasta. Se o português sumir após atualizar, <strong>rode o comando de instalação de novo</strong>.</p>
+        <p>Na maioria das vezes, não — o arquivo fica na pasta de locales. Mas atualizações via Flatpak/AUR ou o instalador do Windows podem sobrescrever a pasta. Se o português sumir após atualizar, <strong>rode o instalador de novo</strong>.</p>
       </details>
       <details>
         <summary>Funciona no Windows?</summary>
-        <p>O <code>install.sh</code> é para Linux. No Windows, baixe o <a href="https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/pt_BR.json" target="_blank" rel="noopener">pt_BR.json</a> e copie para a pasta <code>resources/locales</code> ao lado do executável (onde está o <code>en_US.json</code>).</p>
+        <p>Sim, com instalador próprio em PowerShell. Use <code>irm … install.ps1 | iex</code> — o script detecta a instalação pelo registro do Windows e por <code>%LOCALAPPDATA%\twintaillauncher</code>, e só solicita elevação de administrador quando a pasta de destino não permite escrita. Funciona no Windows PowerShell 5.1 e no PowerShell 7+.</p>
+      </details>
+      <details>
+        <summary>Vou receber um aviso do Windows ao rodar?</summary>
+        <p>Só o prompt do UAC, e apenas se a instalação estiver em <code>Program Files</code> (a instalação padrão é por usuário, em <code>%LOCALAPPDATA%</code>, e não pede nada). O <code>irm … | iex</code> não é bloqueado pela política de execução do PowerShell.</p>
       </details>
       <details>
         <summary>É seguro? Vou ser banido?</summary>
@@ -234,10 +346,7 @@ find /usr /opt /var/lib/flatpak $HOME/.local/share/flatpak -name "pt_BR.json" -p
       </details>
       <details>
         <summary>Como desinstalar?</summary>
-        <pre><code>sudo rm /usr/lib/twintaillauncher/resources/locales/pt_BR.json
-# Flatpak usuário:
-rm ~/.local/share/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/twintaillauncher/resources/locales/pt_BR.json</code></pre>
-        <p>Depois selecione outro idioma nas configurações.</p>
+        <p>Use os desinstaladores — eles removem só o <code>pt_BR.json</code>. Veja a seção <a href="#desinstalar">Como desinstalar</a> para os comandos e para o modo de simulação.</p>
       </details>
       <details>
         <summary>Encontrei um erro de tradução. Como ajudar?</summary>
@@ -249,7 +358,8 @@ rm ~/.local/share/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/
     <section class="wrap section cta" aria-labelledby="titulo-cta">
       <h2 id="titulo-cta">Pronto para jogar em português? 🎮</h2>
       <p>Um comando, três cliques, zero telemetria. Feito com 💜 pela comunidade.</p>
-      <pre><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+      <pre data-platform-panel="linux"><code>curl -fsSL https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.sh | bash</code></pre>
+      <pre data-platform-panel="windows"><code>irm https://raw.githubusercontent.com/zonaro/TwinTailLauncher-br-lang/main/install.ps1 | iex</code></pre>
       <p>
         <a class="btn-primary" href="https://github.com/zonaro/TwinTailLauncher-br-lang" target="_blank" rel="noopener">⭐ Apoie no GitHub</a>
         <a class="btn-ghost" href="https://twintaillauncher.app/#download" target="_blank" rel="noopener">Baixar o launcher oficial</a>
@@ -270,19 +380,46 @@ rm ~/.local/share/flatpak/app/app.twintaillauncher.ttl/current/active/files/lib/
   </footer>
 
   <script>
-    document.getElementById('copyBtn').addEventListener('click', async () => {
-      const text = document.getElementById('oneliner').innerText.trim();
+    (function () {
+      const root = document.documentElement;
+      const radios = Array.from(document.querySelectorAll('input[name="platform"]'));
+      const badge = document.getElementById('detectedBadge');
       const hint = document.getElementById('copyHint');
-      try {
-        await navigator.clipboard.writeText(text);
-        hint.textContent = '✅ Comando copiado! Cole no terminal e pressione Enter.';
-      } catch {
-        const ta = document.createElement('textarea');
-        ta.value = text; document.body.appendChild(ta);
-        ta.select(); document.execCommand('copy'); ta.remove();
-        hint.textContent = '✅ Comando copiado!';
+
+      function apply(platform, auto) {
+        root.dataset.platform = platform;
+        radios.forEach(function (radio) { radio.checked = radio.value === platform; });
+        badge.hidden = !auto;
+        hint.textContent = '';
       }
-    });
+
+      radios.forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          if (radio.checked) { apply(radio.value, false); }
+        });
+      });
+
+      apply(/Windows/i.test(navigator.userAgent) ? 'windows' : 'linux', true);
+
+      document.getElementById('copyBtn').addEventListener('click', async function () {
+        const panel = document.querySelector('#instalar pre[data-platform-panel="' + root.dataset.platform + '"]');
+        const text = panel.innerText.trim();
+        try {
+          await navigator.clipboard.writeText(text);
+          hint.textContent = '✅ Comando copiado! ' + (root.dataset.platform === 'windows'
+            ? 'Cole no PowerShell e pressione Enter.'
+            : 'Cole no terminal e pressione Enter.');
+        } catch {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+          hint.textContent = '✅ Comando copiado!';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
